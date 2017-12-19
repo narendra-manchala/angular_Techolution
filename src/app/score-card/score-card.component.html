@@ -1,0 +1,33 @@
+
+
+<div ngClass="table-responsive container">
+  <table ngClass="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th colspan="4">Students Results Board</th>
+    </tr>
+    <tr>
+      <th>Student Name</th>
+      <th>Roll Number</th>
+      <th>Total Marks</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of studentsData; let i = index">
+      <!--<td>{{i + 1}}</td>-->
+      <td>{{data.name}}</td>
+      <td>{{data.rollNumber}}</td>
+      <td>
+        {{+data.marks.Science -- +data.marks.Maths -- +data.marks.English}}
+      </td>
+      <td *ngIf="data.marks.Maths <20 || data.marks.Science <20 || data.marks.English <20; else elseBlock" class="fail"> Fail</td>
+      <ng-template #elseBlock><td>Pass</td></ng-template>
+    </tr>
+    </tbody>
+  </table>
+
+  <a href="javascript:history.back()" class="btn btn-outline-secondary back">Back</a>
+</div>
+
+

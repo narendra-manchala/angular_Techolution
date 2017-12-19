@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AdmissionFormComponent } from './admission-form/admission-form.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { ScoreCardComponent } from './score-card/score-card.component';
 
 // import { AdmissionModel } from './adform.model'

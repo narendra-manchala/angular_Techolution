@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'My First Angular App';
+  title = 'Angular App';
   students = this.getData();
   constructor(private http: HttpClient) {
     console.log(this.students)

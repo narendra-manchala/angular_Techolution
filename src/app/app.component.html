@@ -1,4 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -27,10 +28,12 @@
       <td>
         {{+data.marks.Science -- +data.marks.Maths -- +data.marks.English}}
       </td>
-      <td *ngIf="data.marks.Maths <20 || data.marks.Science <20 || data.marks.English <20; else elseBlock"> Fail</td>
+      <td *ngIf="data.marks.Maths <20 || data.marks.Science <20 || data.marks.English <20; else elseBlock" class="fail"> Fail</td>
       <ng-template #elseBlock><td>Pass</td></ng-template>
     </tr>
     </tbody>
   </table>
 </div>
+
+<admission-form></admission-form>
 

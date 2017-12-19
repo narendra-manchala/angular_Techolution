@@ -1,0 +1,92 @@
+<div class="container">
+  <h1>Admission Form</h1>
+  <form #admissionForm = "ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" required minlength="3" maxlength="20" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="model.Name" name="name" #name="ngModel">
+      <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+        <div [hidden]="!name.errors.required">
+          Name is required!
+        </div>
+        <div [hidden]="!name.errors.minlength">
+          Name must be at least 3 Characters
+        </div>
+        <div [hidden]="!name.errors.maxlength">
+          Name must be less than 20 Characters
+        </div>
+        <div [hidden]="!name.errors.pattern">
+          Only alpabets are allowed
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Enter Last name" required minlength="3" maxlength="20" pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="model.LastName" name="lastName" #lastName="ngModel">
+      <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+        <div [hidden]="!lastName.errors.required">
+          Last Name is required!
+        </div>
+        <div [hidden]="!lastName.errors.minlength">
+          Last Name must be at least 3 Characters
+        </div>
+        <div [hidden]="!lastName.errors.maxlength">
+          Last Name must be less than 20 Characters
+        </div>
+        <div [hidden]="!lastName.errors.pattern">
+          Only alpabets are allowed
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="class">Class</label>
+      <input type="text" class="form-control" id="class" placeholder="Enter Class" required pattern="[a-zA-Z0-9]*" [(ngModel)]="model.Class" name="class" #class="ngModel">
+      <div *ngIf="class.errors && (class.dirty || class.touched)" class="alert alert-danger">
+        <div [hidden]="!class.errors.required">
+          Class is required!
+        </div>
+        <div [hidden]="!class.errors.pattern">
+          Only alpanumeric characters are allowed
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="year">Year of passing</label>
+      <input type="number" class="form-control" id="year" placeholder="Enter Year" required [min]="1947" [max]="2017" pattern="[0-9]*" [(ngModel)]="model.Year" name="year" #year="ngModel">
+      <div *ngIf="year.errors && (year.dirty || year.touched)" class="alert alert-danger">
+        <div [hidden]="!year.errors.required">
+          Year is required!
+        </div>
+        <div [hidden]="!year.errors.pattern">
+          Only numbers characters are allowed
+        </div>
+        <div [hidden]="!year.errors.min">
+          Year should be after 1947
+        </div>
+        <div [hidden]="!year.errors.max">
+          Year should be before 2017
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="percentage">Percentage</label>
+      <input type="number" class="form-control" id="percentage" placeholder="Enter Percentage" required pattern="[0-9]*" [max]="100" [(ngModel)]="model.Percentage" name="percentage" #percentage="ngModel">
+      <div *ngIf="percentage.errors && (percentage.dirty || percentage.touched)" class="alert alert-danger">
+        <div [hidden]="!percentage.errors.required">
+          Percentage is required!
+        </div>
+        <div [hidden]="!percentage.errors.pattern">
+          Only numbers characters are allowed
+        </div>
+        <div [hidden]="!percentage.errors.max">
+          Percentage can't be more than 100%.
+        </div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="!admissionForm.form.valid" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!--<div>-->
+  <!--<h1>Admission Details:</h1>-->
+  <!--{{CurrentAdmission}}-->
+<!--</div>-->

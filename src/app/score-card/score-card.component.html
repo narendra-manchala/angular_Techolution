@@ -7,16 +7,16 @@
       <th colspan="4">Students Results Board</th>
     </tr>
     <tr>
-      <th>Student Name</th>
-      <th>Roll Number</th>
-      <th>Total Marks</th>
-      <th>Status</th>
+      <th><i>Student Name</i></th>
+      <th><i>Roll Number</i></th>
+      <th><i>Total Marks</i></th>
+      <th><i>Status</i></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let data of studentsData; let i = index">
       <!--<td>{{i + 1}}</td>-->
-      <td>{{data.name}}</td>
+      <td class="name">{{data.name}}</td>
       <td>{{data.rollNumber}}</td>
       <td>
         {{+data.marks.Science -- +data.marks.Maths -- +data.marks.English}}

@@ -1,8 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-
-
-
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -14,36 +11,7 @@
   <a routerLink="/admission" class="btn btn-outline-primary">Admission Form</a>
   <a routerLink="/scorecard" class="btn btn-outline-primary">Score Card</a>
 </div>
-<!--
-<div ngClass="table-responsive container">
-  <table ngClass="table table-striped table-bordered">
-    <thead>
-    <tr>
-      <th colspan="4">Students Results Board</th>
-    </tr>
-    <tr>
-      <th>Student Name</th>
-      <th>Roll Number</th>
-      <th>Total Marks</th>
-      <th>Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let data of studentsData; let i = index">
-      &lt;!&ndash;<td>{{i + 1}}</td>&ndash;&gt;
-      <td>{{data.name}}</td>
-      <td>{{data.rollNumber}}</td>
-      <td>
-        {{+data.marks.Science &#45;&#45; +data.marks.Maths &#45;&#45; +data.marks.English}}
-      </td>
-      <td *ngIf="data.marks.Maths <20 || data.marks.Science <20 || data.marks.English <20; else elseBlock" class="fail"> Fail</td>
-      <ng-template #elseBlock><td>Pass</td></ng-template>
-    </tr>
-    </tbody>
-  </table>
-</div>-->
 
 <router-outlet></router-outlet>
-<!--<score-card></score-card>-->
-<!--<admission-form></admission-form>-->
+
 

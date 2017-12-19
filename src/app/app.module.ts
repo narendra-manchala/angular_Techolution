@@ -8,9 +8,6 @@ import { AdmissionFormComponent } from './admission-form/admission-form.componen
 import { AppRoutingModule } from './app-routing.module';
 import { ScoreCardComponent } from './score-card/score-card.component';
 
-// import { AdmissionModel } from './adform.model'
-
-
 
 @NgModule({
   declarations: [

@@ -1,3 +1,6 @@
 .fail{
   color: red;
 }
+.name:first-letter{
+  text-transform: capitalize;
+}

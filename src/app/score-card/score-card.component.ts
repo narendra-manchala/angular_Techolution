@@ -8,15 +8,11 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ScoreCardComponent implements OnInit {
 
-  // constructor() { }
-
   ngOnInit() {
+    this.getData()
   }
 
-  students = this.getData();
-  constructor(private http: HttpClient) {
-    console.log(this.students)
-  }
+  constructor(private http: HttpClient) {}
   studentsData;
   getData() {
     this.http.get('assets/data.json')//, options)

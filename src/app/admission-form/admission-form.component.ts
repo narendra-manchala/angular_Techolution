@@ -20,8 +20,6 @@ export class AdmissionFormComponent implements OnInit {
   get CurrentAdmission(){
     return JSON.stringify(this.model)
   }
-
-
 }
 
 

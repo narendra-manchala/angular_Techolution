@@ -91,6 +91,8 @@ export class ScoreCardComponent implements OnInit {
           }
         });
       });
+
+      $(".display").css('display', 'block')
     }, 1200)
 
     setTimeout(() => {

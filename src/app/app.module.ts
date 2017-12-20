@@ -13,7 +13,7 @@ import { ScoreCardComponent } from './score-card/score-card.component';
   declarations: [
     AppComponent,
     AdmissionFormComponent,
-    ScoreCardComponent,
+    ScoreCardComponent
   ],
   imports: [
     BrowserModule,

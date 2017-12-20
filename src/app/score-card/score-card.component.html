@@ -1,8 +1,8 @@
 
 
 <div ngClass="table-responsive container">
-  <table ngClass="table table-striped table-bordered">
-    <thead>
+  <table ngClass="table table-striped table-bordered table-hover table-fixed-header">
+    <thead class="header">
     <tr>
       <th colspan="4">Students Results Board</th>
     </tr>
@@ -14,7 +14,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let data of studentsData; let i = index">
+    <tr *ngFor="let data of (studentsData); let i = index" >
       <!--<td>{{i + 1}}</td>-->
       <td class="name">{{data.name}}</td>
       <td>{{data.rollNumber}}</td>

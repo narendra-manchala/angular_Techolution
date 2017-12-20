@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive, ElementRef, Renderer2, Input } from '@angular/core';
+
 
 import { Admission } from '../adform.model'
 
@@ -20,4 +21,7 @@ export class AdmissionFormComponent implements OnInit {
     return JSON.stringify(this.model)
   }
 
+
 }
+
+

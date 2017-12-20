@@ -51,34 +51,26 @@
     </div>
     <div class="form-group">
       <label for="year">Year of passing</label>
-      <input type="number" class="form-control" id="year" placeholder="Enter Year" required [min]="1947" [max]="2017" pattern="[0-9]*" [(ngModel)]="model.Year" name="year" #year="ngModel">
+      <input type="number" class="form-control" id="year" placeholder="Enter Year" required min="1947" max="2017" pattern="(0?[0-9]|[0-9][0-9]|[0-9][0-9][0-9]|1[0-9][0-9][0-9]|[2][0][0-9][0-7])"  [(ngModel)]="model.Year" name="year" #year="ngModel" limit-to-max>
       <div *ngIf="year.errors && (year.dirty || year.touched)" class="alert alert-danger">
         <div [hidden]="!year.errors.required">
           Year is required!
         </div>
         <div [hidden]="!year.errors.pattern">
-          Only numbers characters are allowed
+          Year must be below 2017
         </div>
-        <div [hidden]="!year.errors.min">
-          Year should be after 1947
-        </div>
-        <div [hidden]="!year.errors.max">
-          Year should be before 2017
-        </div>
+
       </div>
     </div>
     <div class="form-group">
       <label for="percentage">Percentage</label>
-      <input type="number" class="form-control" id="percentage" placeholder="Enter Percentage" required pattern="[0-9]*" [max]="100" [(ngModel)]="model.Percentage" name="percentage" #percentage="ngModel">
+      <input type="number" class="form-control" id="percentage" placeholder="Enter Percentage" required pattern="(0?[0-9]|[0-9][1-9]|[1][0][0])" [(ngModel)]="model.Percentage" name="percentage" #percentage="ngModel">
       <div *ngIf="percentage.errors && (percentage.dirty || percentage.touched)" class="alert alert-danger">
         <div [hidden]="!percentage.errors.required">
           Percentage is required!
         </div>
         <div [hidden]="!percentage.errors.pattern">
-          Only numbers characters are allowed
-        </div>
-        <div [hidden]="!percentage.errors.max">
-          Percentage can't be more than 100%.
+          Percentage should be between 0 & 100
         </div>
       </div>
     </div>

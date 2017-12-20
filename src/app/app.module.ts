@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
+import { SortTableService} from './sort-table.service';
+
 import { AppComponent } from './app.component';
 import { AdmissionFormComponent } from './admission-form/admission-form.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +23,7 @@ import { ScoreCardComponent } from './score-card/score-card.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SortTableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,9 @@ import {HttpClient} from '@angular/common/http';
 import {SortTableService} from '../sort-table.service';
 import {Data} from '../data';
 
+declare var jquery:any;
+declare var $ :any;
+
 @Component({
   selector: 'score-card',
   templateUrl: './score-card.component.html',
@@ -36,9 +39,9 @@ export class ScoreCardComponent implements OnInit {
 
         var totalMarks = Number(that.studentsData[i].marks.Science) + Number(that.studentsData[i].marks.Maths)  +Number(that.studentsData[i].marks.English)
         if(that.studentsData[i].marks.Science > 20 && that.studentsData[i].marks.Maths> 20 && that.studentsData[i].marks.English >20) {
-          status = "pass"
+          var status ="pass"
         }else{
-          status = "fail"
+          status ="fail"
         }
         var newData: Data = {
           studentName: that.studentsData[i].name,
@@ -51,10 +54,20 @@ export class ScoreCardComponent implements OnInit {
       console.log(newData)
     }
     setTimeout(() => {
-      if(document.querySelector("td").innerText == "fail"){
-      document.querySelector("td").parentElement.classList.add("fail");
+      // console.log(document.querySelector("td").innerText)
+      // if(document.querySelector("td").innerText == "fail"){
+      //   document.querySelector("td").parentElement.classList.add("fail");
+      // }
+      $(document).ready(function(){
+        $('table tr').each(function(){
+          console.log($(this).find('td').eq(3).text())
+          if($(this).find('td').eq(3).text() == "fail"){
+            // console.log($(this).find('td').eq(3).text())
 
-    }
+            $(this).css('color','red');
+          }
+        });
+      });
     }, 1200)
 
     setTimeout(() => {

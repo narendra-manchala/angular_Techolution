@@ -35,7 +35,7 @@ export class ScoreCardComponent implements OnInit {
     function enterData(){
 
       for(let i=0;i<that.studentsData.length;i++) {
-        console.log(that.studentsData)
+        // console.log(that.studentsData)
 
         var totalMarks = Number(that.studentsData[i].marks.Science) + Number(that.studentsData[i].marks.Maths)  +Number(that.studentsData[i].marks.English)
         if(that.studentsData[i].marks.Science > 20 && that.studentsData[i].marks.Maths> 20 && that.studentsData[i].marks.English >20) {
@@ -51,19 +51,42 @@ export class ScoreCardComponent implements OnInit {
         }
       that.sort.addItem(newData)
       }
-      console.log(newData)
+      // console.log(newData)
     }
     setTimeout(() => {
-      // console.log(document.querySelector("td").innerText)
-      // if(document.querySelector("td").innerText == "fail"){
-      //   document.querySelector("td").parentElement.classList.add("fail");
-      // }
+
+      // var result,
+      //     max=0;
+      // $("td").filter(function(){
+      //   var myval = parseInt($(this).eq(2).text());
+      //
+      //   if(myval > max){
+      //     result = this;
+      //     max = myval;
+      //   }
+      // });
+      // result.addClass("highest");
+
+      var highest = 0;
+
+      $("table tr").each(function() {
+        var current = parseInt($(this).find('td').eq(2).text());
+        console.log(current, highest)
+        if (current > highest) {
+          highest = current;
+          console.log(current, highest)
+
+          $(".highest").removeClass();
+          $(this).addClass('highest');
+        }
+      });
+
+      $(".highest").find("td").eq(3).html("Topper")
+
       $(document).ready(function(){
         $('table tr').each(function(){
-          console.log($(this).find('td').eq(3).text())
+          // console.log($(this).find('td').eq(3).text())
           if($(this).find('td').eq(3).text() == "fail"){
-            // console.log($(this).find('td').eq(3).text())
-
             $(this).css('color','red');
           }
         });

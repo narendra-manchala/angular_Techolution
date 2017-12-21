@@ -14,7 +14,8 @@ export class SortTableService {
   }
 
   sort(){
-    this.data.sort(function(a,b){
+    this.data.sort(function(a:Data, b:Data) {
+
       return a.studentName.localeCompare(b.studentName)
     })
   }

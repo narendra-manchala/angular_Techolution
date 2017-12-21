@@ -1,5 +1,5 @@
 export interface Data {
-  studentName: String,
+  studentName: string,
   rollNumber: String,
   totalMarks: Number,
   status: String
